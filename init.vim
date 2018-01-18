@@ -30,11 +30,12 @@ set autoread
 """"""""""""""""""""""""""""""""""""""""
 " Tabs, Spaces, Folds
 """"""""""""""""""""""""""""""""""""""""
-setlocal smarttab
-setlocal foldcolumn=1
-setlocal expandtab
-setlocal shiftwidth=4
-setlocal tabstop=4
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set foldcolumn=1
 
 """"""""""""""""""""""""""""""""""""""""
 " UI
@@ -49,16 +50,16 @@ endtry
 " Plugins (via vim-plug)
 """""""""""""""""""""""""""""""""""""""
 call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'valloric/youcompleteme'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/syntastic'
-Plug 'edkolev/tmuxline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
-Plug 'benmills/vimux'
+    Plug 'tpope/vim-sensible'
+    Plug 'valloric/youcompleteme'
+    Plug 'bling/vim-airline'
+    Plug 'scrooloose/syntastic'
+    Plug 'edkolev/tmuxline.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-fugitive'
+    Plug 'majutsushi/tagbar'
+    Plug 'benmills/vimux'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
