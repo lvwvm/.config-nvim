@@ -60,6 +60,8 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
+    Plug 'Shougo/denite.nvim'
+    Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
