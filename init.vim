@@ -41,6 +41,7 @@ set foldcolumn=1
 " UI
 """"""""""""""""""""""""""""""""""""""""
 let g:airline_theme="wombat"
+let g:airline#extensions#tabline#enabled = 1
 try
     colorscheme elflord
 catch
