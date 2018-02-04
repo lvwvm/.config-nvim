@@ -50,6 +50,8 @@ endtry
 " Plugins (via vim-plug)
 """""""""""""""""""""""""""""""""""""""
 call plug#begin()
+    Plug 'tpope/vim-obsession'
+    Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
     Plug 'bling/vim-airline'
     Plug 'scrooloose/syntastic'
@@ -60,7 +62,7 @@ call plug#begin()
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
     Plug 'Shougo/denite.nvim'
-    Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
