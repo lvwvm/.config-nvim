@@ -54,7 +54,7 @@ call plug#begin()
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
     Plug 'bling/vim-airline'
-    Plug 'scrooloose/syntastic'
+    Plug 'w0rp/ale'
     Plug 'edkolev/tmuxline.vim'
     Plug 'scrooloose/nerdtree'
     Plug 'vim-airline/vim-airline-themes'
