@@ -51,7 +51,6 @@ endtry
 """""""""""""""""""""""""""""""""""""""
 call plug#begin()
     Plug 'tpope/vim-sensible'
-    Plug 'valloric/youcompleteme'
     Plug 'bling/vim-airline'
     Plug 'scrooloose/syntastic'
     Plug 'edkolev/tmuxline.vim'
@@ -97,3 +96,8 @@ nnoremap <Left> <NOP>
 
 "Double tap q to Escape.
 inoremap qq <ESC>
+
+"""""""""""""""""""""""""""""""""""""""
+" Plugin Settings
+"""""""""""""""""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
