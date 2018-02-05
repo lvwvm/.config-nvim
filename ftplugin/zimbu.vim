@@ -1,7 +1,7 @@
 " Vim filetype plugin file
 " Language:	Zimbu
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2017 Dec 05
+" Last Change:	2012 Sep 08
 
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
@@ -15,7 +15,7 @@ let b:did_ftplugin = 1
 let s:cpo_save = &cpo
 set cpo-=C
 
-let b:undo_ftplugin = "setl fo< com< ofu< efm< tw< et< sts< sw< | if has('vms') | setl isk< | endif"
+let b:undo_ftplugin = "setl fo< com< ofu< efm< tw< et< sts< sw<"
 
 " Set 'formatoptions' to break comment lines but not other lines,
 " and insert the comment leader when hitting <CR> or using "o".
@@ -135,10 +135,8 @@ iabbr <buffer> <expr> until GCUpperSpace("until")
 iabbr <buffer> <expr> while GCUpperSpace("while")
 iabbr <buffer> <expr> repeat GCUpper("repeat")
 
-if !exists("no_plugin_maps") && !exists("no_zimbu_maps")
-  nnoremap <silent> <buffer> [[ m`:call ZimbuGoStartBlock()<CR>
-  nnoremap <silent> <buffer> ]] m`:call ZimbuGoEndBlock()<CR>
-endif
+nnoremap <silent> <buffer> [[ m`:call ZimbuGoStartBlock()<CR>
+nnoremap <silent> <buffer> ]] m`:call ZimbuGoEndBlock()<CR>
 
 " Using a function makes sure the search pattern is restored
 func! ZimbuGoStartBlock()

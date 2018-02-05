@@ -1,5 +1,2 @@
-" Load the matchit package.
-" For those users who were loading the matchit plugin from here.
-if 1
-    packadd matchit
-endif
+" This file is a compatibility stub for any plugins which source it.
+" Nvim already loads the matchit plugin by default; see ':help pi_matchit.txt'.

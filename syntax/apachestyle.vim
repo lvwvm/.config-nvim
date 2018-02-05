@@ -1,10 +1,8 @@
 " Vim syntax file
 " Language:	Apache-Style configuration files (proftpd.conf/apache.conf/..)
-" Maintainer:	Ben RUBSON <ben.rubson@gmail.com>
-" Former Maintainer:	Christian Hammers <ch@westend.com>
+" Maintainer:	Christian Hammers <ch@westend.com>
+" URL:		none
 " ChangeLog:
-"	2017-12-17,ch
-"		correctly detect comments
 "	2001-05-04,ch
 "		adopted Vim 6.0 syntax style
 "	1999-10-28,ch
@@ -29,8 +27,8 @@ endif
 
 syn case ignore
 
-syn match  apOption	/^\s*[^ \t#<=]*/
 syn match  apComment	/^\s*#.*$/
+syn match  apOption	/^\s*[^ \t#<=]*/
 "syn match  apLastValue	/[^ \t<=#]*$/ contains=apComment	ugly
 
 " tags

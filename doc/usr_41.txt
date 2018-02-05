@@ -1,4 +1,4 @@
-*usr_41.txt*	For Vim version 8.0.  Last change: 2017 Dec 02
+*usr_41.txt*	Nvim
 
 		     VIM USER MANUAL - by Bram Moolenaar
 
@@ -681,7 +681,6 @@ Floating point computation:				*float-functions*
 	sinh()			hyperbolic sine
 	cosh()			hyperbolic cosine
 	tanh()			hyperbolic tangent
-	isnan()			check for not a number
 
 Other computation:					*bitwise-function*
 	and()			bitwise AND
@@ -886,7 +885,6 @@ GUI:						*gui-functions*
 	getwinposx()		X position of the GUI Vim window
 	getwinposy()		Y position of the GUI Vim window
 	balloon_show()		set the balloon content
-	balloon_split()		split a message for a balloon
 
 Vim server:					*server-functions*
 	serverlist()		return the list of server names
@@ -902,7 +900,6 @@ Vim server:					*server-functions*
 Window size and position:			*window-size-functions*
 	winheight()		get height of a specific window
 	winwidth()		get width of a specific window
-	win_screenpos()		get screen position of a window
 	winrestcmd()		return command to restore window sizes
 	winsaveview()		get view of current window
 	winrestview()		restore saved view of current window
@@ -923,74 +920,10 @@ Testing:				    *test-functions*
 	assert_true()		assert that an expression is true
 	assert_exception()	assert that a command throws an exception
 	assert_fails()		assert that a function call fails
-	assert_report()		report a test failure
-	test_alloc_fail()	make memory allocation fail
-	test_autochdir()	enable 'autochdir' during startup
-	test_override()		test with Vim internal overrides
-	test_garbagecollect_now()   free memory right now
-	test_ignore_error()	ignore a specific error message
-	test_null_channel()	return a null Channel
-	test_null_dict()	return a null Dict
-	test_null_job()		return a null Job
-	test_null_list()	return a null List
-	test_null_partial()	return a null Partial function
-	test_null_string()	return a null String
-	test_settime()		set the time Vim uses internally
-
-Inter-process communication:		    *channel-functions*
-	ch_canread()		check if there is something to read
-	ch_open()		open a channel
-	ch_close()		close a channel
-	ch_close_in()		close the in part of a channel
-	ch_read()		read a message from a channel
-	ch_readraw()		read a raw message from a channel
-	ch_sendexpr()		send a JSON message over a channel
-	ch_sendraw()		send a raw message over a channel
-	ch_evalexpr()		evaluates an expression over channel
-	ch_evalraw()		evaluates a raw string over channel
-	ch_status()		get status of a channel
-	ch_getbufnr()		get the buffer number of a channel
-	ch_getjob()		get the job associated with a channel
-	ch_info()		get channel information
-	ch_log()		write a message in the channel log file
-	ch_logfile()		set the channel log file
-	ch_setoptions()		set the options for a channel
-	json_encode()		encode an expression to a JSON string
-	json_decode()		decode a JSON string to Vim types
-	js_encode()		encode an expression to a JSON string
-	js_decode()		decode a JSON string to Vim types
-
-Jobs:		    			        *job-functions*
-	job_start()		start a job
-	job_stop()		stop a job
-	job_status()		get the status of a job
-	job_getchannel()	get the channel used by a job
-	job_info()		get information about a job
-	job_setoptions()	set options for a job
-
-Terminal window:				*terminal-functions*
-	term_start()		open a terminal window and run a job
-	term_list()		get the list of terminal buffers
-	term_sendkeys()		send keystrokes to a terminal
-	term_wait()		wait for screen to be updated
-	term_getjob()		get the job associated with a terminal
-	term_scrape()		get row of a terminal screen
-	term_getline()		get a line of text from a terminal
-	term_getattr()		get the value of attribute {what}
-	term_getcursor()	get the cursor position of a terminal
-	term_getscrolled()	get the scroll count of a terminal
-	term_getaltscreen()	get the alternate screen flag
-	term_getsize()		get the size of a terminal
-	term_getstatus()	get the status of a terminal
-	term_gettitle()		get the title of a terminal
-	term_gettty()		get the tty name of a terminal
 
 Timers:						*timer-functions*
 	timer_start()		create a timer
-	timer_pause()		pause or unpause a timer
 	timer_stop()		stop a timer
-	timer_stopall()		stop all timers
-	timer_info()		get information about timers
 
 Various:					*various-functions*
 	mode()			get current editing mode
@@ -1021,8 +954,6 @@ Various:					*various-functions*
 	tagfiles()		get a list of tags files
 
 	luaeval()		evaluate Lua expression
-	mzeval()		evaluate |MzScheme| expression
-	perleval()		evaluate Perl expression (|+perl|)
 	py3eval()		evaluate Python expression (|+python3|)
 	pyeval()		evaluate Python expression (|+python|)
 	pyxeval()		evaluate |python_x| expression
@@ -1604,8 +1535,8 @@ Here is a summary of items that apply to Vim scripts.  They are also mentioned
 elsewhere, but form a nice checklist.
 
 The end-of-line character depends on the system.  For Unix a single <NL>
-character is used.  For MS-DOS, Windows, OS/2 and the like, <CR><LF> is used.
-This is important when using mappings that end in a <CR>.  See |:source_crnl|.
+character is used.  For Windows <CR><LF> is used.  This is important when
+using mappings that end in a <CR>.  See |:source_crnl|.
 
 
 WHITE SPACE
@@ -2161,8 +2092,8 @@ Example: >
 
 Write this single-line file as "ftdetect/foofoo.vim" in the first directory
 that appears in 'runtimepath'.  For Unix that would be
-"~/.vim/ftdetect/foofoo.vim".  The convention is to use the name of the
-filetype for the script name.
+"~/.config/nvim/ftdetect/foofoo.vim".  The convention is to use the name of 
+the filetype for the script name.
 
 You can make more complicated checks if you like, for example to inspect the
 contents of the file to recognize the language.  Also see |new-filetype|.
@@ -2232,8 +2163,8 @@ you can write the different setting in a script: >
 
 Now write this in the "after" directory, so that it gets sourced after the
 distributed "vim.vim" ftplugin |after-directory|.  For Unix this would be
-"~/.vim/after/ftplugin/vim.vim".  Note that the default plugin will have set
-"b:did_ftplugin", but it is ignored here.
+"~/.config/nvim/after/ftplugin/vim.vim".  Note that the default plugin will 
+have set "b:did_ftplugin", but it is ignored here.
 
 
 OPTIONS
@@ -2402,8 +2333,8 @@ a user to overrule or add to the default file.  The default files start with: >
 	:let current_compiler = "mine"
 
 When you write a compiler file and put it in your personal runtime directory
-(e.g., ~/.vim/compiler for Unix), you set the "current_compiler" variable to
-make the default file skip the settings.
+(e.g., ~/.config/nvim/compiler for Unix), you set the "current_compiler" 
+variable to make the default file skip the settings.
 							*:CompilerSet*
 The second mechanism is to use ":set" for ":compiler!" and ":setlocal" for
 ":compiler".  Vim defines the ":CompilerSet" user command for this.  However,
@@ -2423,7 +2354,7 @@ runtime directory, use the mechanism mentioned above.  When
 When you write a compiler plugin to overrule settings from a default plugin,
 don't check "current_compiler".  This plugin is supposed to be loaded
 last, thus it should be in a directory at the end of 'runtimepath'.  For Unix
-that could be ~/.vim/after/compiler.
+that could be ~/.config/nvim/after/compiler.
 
 ==============================================================================
 *41.14*	Writing a plugin that loads quickly	*write-plugin-quickload*
@@ -2541,7 +2472,7 @@ want to use subdirectories.  Example: >
 
 For Unix the library script used for this could be:
 
-	~/.vim/autoload/netlib/ftp.vim
+	~/.config/nvim/autoload/netlib/ftp.vim
 
 Where the function is defined like this: >
 
@@ -2577,8 +2508,6 @@ utility is recommended.
 
 For utmost portability use Vim itself to pack scripts together.  This can be
 done with the Vimball utility.  See |vimball|.
-
-It's good if you add a line to allow automatic updating.  See |glvs-plugins|.
 
 ==============================================================================
 

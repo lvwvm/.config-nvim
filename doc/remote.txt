@@ -1,4 +1,4 @@
-*remote.txt*    For Vim version 8.0.  Last change: 2017 Nov 12
+*remote.txt*    Nvim
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -6,11 +6,7 @@
 
 Vim client-server communication				*client-server*
 
-1. Common functionality		|clientserver|
-2. X11 specific items		|x11-clientserver|
-3. MS-Windows specific items	|w32-clientserver|
-
-{Vi does not have any of these commands}
+                                      Type |gO| to see the table of contents.
 
 ==============================================================================
 1. Common functionality					*clientserver*
@@ -59,11 +55,6 @@ The following command line arguments are available:
 						*--remote-tab-wait-silent*
    --remote-tab-wait-silent	Like --remote-wait-silent but open each file
 				in a new tabpage.
-								*--servername*
-   --servername {name}		Become the server {name}.  When used together
-				with one of the --remote commands: connect to
-				server {name} instead of the default (see
-				below).
 								*--remote-send*
    --remote-send {keys}		Send {keys} to server and exit.  The {keys}
    				are not mapped.  Special key names are
@@ -72,9 +63,6 @@ The following command line arguments are available:
 								*--remote-expr*
    --remote-expr {expr}		Evaluate {expr} in server and print the result
 				on stdout.
-								*--serverlist*
-   --serverlist			Output a list of server names.
-
 
 Examples ~
 
@@ -181,8 +169,7 @@ name on the 'VimRegistry' property on the root window.
 
 A non GUI Vim with access to the X11 display (|xterm-clipboard| enabled), can
 also act as a command server if a server name is explicitly given with the
---servername argument, or when Vim was build with the |+autoservername|
-feature.
+--servername argument.
 
 An empty --servername argument will cause the command server to be disabled.
 
@@ -197,8 +184,7 @@ version compiled with OLE.  Windows messages are used, this works on any
 version of MS-Windows.  But only communication within one system is possible.
 
 Since MS-Windows messages are used, any other application should be able to
-communicate with a Vim server.  An alternative is using the OLE functionality
-|ole-interface|.
+communicate with a Vim server.
 
 When using gvim, the --remote-wait only works properly this way: >
 

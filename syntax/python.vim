@@ -138,7 +138,7 @@ syn region  pythonString matchgroup=pythonQuotes
       \ start=+[uU]\=\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
       \ contains=pythonEscape,@Spell
 syn region  pythonString matchgroup=pythonTripleQuotes
-      \ start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend
+      \ start=+[uU]\=\z('''\|"""\)+ skip=+\\["']+ end="\z1" keepend
       \ contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
 syn region  pythonRawString matchgroup=pythonQuotes
       \ start=+[uU]\=[rR]\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
