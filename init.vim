@@ -94,11 +94,25 @@ nnoremap <Right> <NOP>
 nnoremap <Left> <NOP>
 
 """""""""""""""""""""""""""""""""""""""
-" Insert Mode 
+" Insert Mode
 """""""""""""""""""""""""""""""""""""""
 
 "Double tap q to Escape.
 inoremap qq <ESC>
+
+"""""""""""""""""""""""""""""""""""""""
+" Ale
+"""""""""""""""""""""""""""""""""""""""
+
+" Display errors and warnings in the statusline
+let g:airline#extensions#ale#enabled = 1
+
+" Do not run ale on after every modifcation
+let g:ale_lint_on_text_changed = 'never'
+
+" Run ale upon opening a file.
+let g:ale_lint_on_enter = 1
+
 
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
