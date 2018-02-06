@@ -122,5 +122,5 @@ let g:deoplete#enable_at_startup = 1
 """""""""""""""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""""""""""""
-let g:python_host_prog = '~/.local/share/virtualenvs/neovim2/bin/python'
-let g:python3_host_prog = '~/.local/share/virtualenvs/neovim/bin/python3'
+let g:python_host_prog = '/home/luwum/.local/share/virtualenvs/neovim2/bin/python'
+let g:python3_host_prog = '/home/luwum/.local/share/virtualenvs/neovim/bin/python'
