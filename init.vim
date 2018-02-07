@@ -70,6 +70,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    Plug 'Shougo/neco-syntax'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
