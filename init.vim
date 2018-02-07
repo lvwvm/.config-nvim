@@ -68,6 +68,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'ervandew/supertab'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
