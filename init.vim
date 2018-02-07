@@ -42,6 +42,7 @@ set foldcolumn=1
 """"""""""""""""""""""""""""""""""""""""
 let g:airline_theme="wombat"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 try
     colorscheme elflord
 catch
@@ -103,16 +104,24 @@ inoremap qq <ESC>
 """""""""""""""""""""""""""""""""""""""
 " Ale
 """""""""""""""""""""""""""""""""""""""
+" Do not keep the sign gutter open at all time.
+let g:ale_sign_column_always = 0
 
 " Display errors and warnings in the statusline
 let g:airline#extensions#ale#enabled = 1
 
-" Do not run ale on after every modifcation
-let g:ale_lint_on_text_changed = 'never'
+" Run ale after every modifcation
+let g:ale_lint_on_text_changed = 'always'
+
+" Set delay time
+let g:ale_lint_delay = 200
 
 " Run ale upon opening a file.
 let g:ale_lint_on_enter = 1
 
+" Mappings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
