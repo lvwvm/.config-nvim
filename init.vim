@@ -65,6 +65,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'benmills/vimux'
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-clang'
     Plug 'ervandew/supertab'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
@@ -127,6 +128,10 @@ let g:ale_lint_on_enter = 1
 " Deoplete
 """""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+
+" Clang source locations
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang' 
 
 """""""""""""""""""""""""""""""""""""""
 " Python
