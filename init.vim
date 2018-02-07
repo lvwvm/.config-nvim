@@ -65,6 +65,9 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'benmills/vimux'
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'ervandew/supertab'
+    Plug 'mattn/emmet-vim'
+    Plug 'othree/javascript-libraries-syntax.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
@@ -118,10 +121,6 @@ let g:ale_lint_delay = 200
 
 " Run ale upon opening a file.
 let g:ale_lint_on_enter = 1
-
-" Mappings
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
