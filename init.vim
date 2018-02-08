@@ -70,7 +70,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'Shougo/neco-syntax'
-    Plug 'wolaski/autocomplete-flow'
+    Plug 'wokalski/autocomplete-flow'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
 call plug#end()
