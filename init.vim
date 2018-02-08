@@ -69,8 +69,10 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'ervandew/supertab'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
     Plug 'Shougo/neco-syntax'
+    Plug 'wolaski/autocomplete-flow'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
@@ -117,7 +119,7 @@ let g:ale_sign_column_always = 0
 let g:airline#extensions#ale#enabled = 1
 
 " Run ale after every modifcation
-let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_text_changed = 'normal'
 
 " Set delay time
 let g:ale_lint_delay = 200
