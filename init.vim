@@ -63,6 +63,8 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
+    Plug 'Shougo/neco-syntax'
+    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-clang'
