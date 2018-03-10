@@ -67,13 +67,15 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-clang'
+    Plug 'tweekmonster/deoplete-clang2'
     Plug 'ervandew/supertab'
+    Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'Shougo/neco-syntax'
     Plug 'wokalski/autocomplete-flow'
     Plug 'Shougo/neosnippet'
+    Plug 'airblade/vim-gitgutter'
     Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
@@ -97,6 +99,8 @@ nmap <c-l> <c-w>l
 nmap <leader>w :w!<cr>
 nmap tt :tabnext<cr>
 nmap TT :tabprevious<cr>
+nmap <leader>b :Denite buffer<cr>
+
 
 " Disable the arrow keys
 nnoremap <Down> <NOP>
