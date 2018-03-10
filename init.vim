@@ -100,7 +100,7 @@ nmap <leader>w :w!<cr>
 nmap tt :tabnext<cr>
 nmap TT :tabprevious<cr>
 nmap <leader>b :Denite buffer<cr>
-
+nmap <leader>f :Denite file<cr>
 
 " Disable the arrow keys
 nnoremap <Down> <NOP>
