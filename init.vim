@@ -112,8 +112,8 @@ nnoremap <Left> <NOP>
 " Insert Mode
 """""""""""""""""""""""""""""""""""""""
 
-"Double tap q to Escape.
-inoremap qq <ESC>
+"Leader-q to Escape from insert mode.
+inoremap <leader>q <ESC>
 
 """""""""""""""""""""""""""""""""""""""
 " Ale
