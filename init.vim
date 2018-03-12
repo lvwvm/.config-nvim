@@ -133,6 +133,12 @@ let g:ale_lint_delay = 200
 " Run ale upon opening a file.
 let g:ale_lint_on_enter = 1
 
+" Linters to use when running ale.
+let g:ale_linters = {
+    'javascript': [ 'standard' ],
+    'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
+    'solidity': [ 'solium' ]
+}
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
 """""""""""""""""""""""""""""""""""""""
