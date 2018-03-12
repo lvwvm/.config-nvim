@@ -154,12 +154,6 @@ let g:ale_sign_column_always = 0
 " Display errors and warnings in the statusline
 let g:airline#extensions#ale#enabled = 1
 
-" Run ale after every modifcation
-let g:ale_lint_on_text_changed = 'normal'
-
-" Set delay time
-let g:ale_lint_delay = 200
-
 " Run ale upon opening a file.
 let g:ale_lint_on_enter = 1
 
@@ -176,6 +170,15 @@ let g:ale_linters = {
 let g:ale_fixers = {
     'javascript': [ 'prettier' ]
 }
+
+" Run ale upon saving a file.
+let g:ale_lint_on_save = 1
+
+" Do not run ale upon changes to the file.
+let g:ale_lint_on_text_changed = 'never'
+
+" Run ale after leaving insert mode. 
+let g:ale_lint_on_insert_leave = 1
 
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
