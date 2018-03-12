@@ -44,7 +44,7 @@ let g:airline_theme="wombat"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 try
-    colorscheme elflord
+    colorscheme pablo
 catch
 endtry
 
@@ -98,7 +98,7 @@ nmap <c-l> <c-w>l
 
 nmap <leader>w :w!<cr>
 nmap <leader>tn :tabnext<cr>
-nmap <leader>tp  :tabprevious<cr>
+nmap <leader>tp :tabprevious<cr>
 nmap <leader>b :Denite buffer<cr>
 nmap <leader>f :Denite file<cr>
 
