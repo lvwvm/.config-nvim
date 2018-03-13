@@ -104,6 +104,7 @@ nmap <leader>tn :tabnext<cr>
 nmap <leader>tp :tabprevious<cr>
 nmap <leader>b :Denite buffer<cr>
 nmap <leader>f :Denite file<cr>
+nmap <leader>h :Denite command_history<cr>
 
 " Disable the arrow keys
 nnoremap <Down> <NOP>
