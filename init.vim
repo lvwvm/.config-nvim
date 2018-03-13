@@ -69,7 +69,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tweekmonster/deoplete-clang2'
     Plug 'ervandew/supertab'
-    Plug ''
+    Plug 'tpope/vim-surround'
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
