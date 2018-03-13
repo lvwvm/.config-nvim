@@ -97,6 +97,8 @@ nmap <c-l> <c-w>l
 " Normal Mode
 """""""""""""""""""""""""""""""""""""""
 
+nmap <leader>gr :Gread<cr> 
+nmap <leader>gw :Gwrite<cr>
 nmap <leader>w :w!<cr>
 nmap <leader>tn :tabnext<cr>
 nmap <leader>tp :tabprevious<cr>
