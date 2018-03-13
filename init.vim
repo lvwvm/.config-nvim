@@ -69,6 +69,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tweekmonster/deoplete-clang2'
     Plug 'ervandew/supertab'
+    Plug ''
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
@@ -135,8 +136,10 @@ let g:ale_lint_on_enter = 1
 
 " Linters to use when running ale.
 let g:ale_linters = {
+    'c': [ 'clang' ],
     'javascript': [ 'standard' ],
     'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
+    'rust' : [ 'clippy' ],
     'solidity': [ 'solium' ]
 }
 """""""""""""""""""""""""""""""""""""""
