@@ -162,14 +162,20 @@ let g:ale_linters = {
     'rust' : [ 'clippy' ],
     'solidity': [ 'solium' ]
 }
+
+" Fixers correct linter errors automagically!
+let g:ale_fixers = {
+    'javascript': [ 'prettier' ]
+}
+
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
 """""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
 
 " Clang source locations
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/include/clang' 
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' 
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 """""""""""""""""""""""""""""""""""""""
 " Python
