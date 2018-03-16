@@ -37,6 +37,15 @@ set expandtab
 set smarttab
 set foldcolumn=1
 
+
+""""""""""""""""""""""""""""""""""""""""
+" Ctags
+""""""""""""""""""""""""""""""""""""""""
+" Don't forget
+" 1. Install univeral ctags at https://github.com/universal-ctags/ctags
+" 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include /usr/local/include
+set tags+=~/.config/nvim/systags
+
 """"""""""""""""""""""""""""""""""""""""
 " UI
 """"""""""""""""""""""""""""""""""""""""
