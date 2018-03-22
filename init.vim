@@ -171,7 +171,14 @@ let g:ale_linters = {
 
 " Fixers correct linter errors automagically!
 let g:ale_fixers = {
-    'javascript': [ 'prettier' ]
+    'c': [ 'clangformat' ],
+    'cpp': [ 'clangformat' ],
+    'sh' : [ 'shfmt' ],
+    'go' : [ 'gofmt' ],
+    'javascript': [ 'prettier-standard' ],
+    'python': [ 'yapf' ],
+    'rust': [ 'rustfmt' ],
+    'vim': ['generic']
 }
 
 " Run ale upon saving a file.
