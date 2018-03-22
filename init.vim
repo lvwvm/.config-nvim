@@ -159,7 +159,10 @@ let g:ale_lint_on_enter = 1
 
 " Linters to use when running ale.
 let g:ale_linters = {
-    'c': [ 'clang' ],
+    'c': [ 'clang-tidy' ],
+    'cpp': [ 'clang-tidy' ],
+    'sh': [ 'shellcheck' ],
+    'go': [ 'megacheck' ],
     'javascript': [ 'standard' ],
     'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
     'rust' : [ 'clippy' ],
