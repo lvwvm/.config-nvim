@@ -195,6 +195,13 @@ let g:ale_lint_on_insert_leave = 1
 """""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
 
+" There are 3 different completion types in vim.
+" 1. omnifunc - a function that can be defined a user, filetype-specific
+" completion
+" 2. completefunc - a function that 
+" 3. completefunc - a function that 
+let g:deoplete#complete_method = 'complete'
+
 " Clang source locations
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' 
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
