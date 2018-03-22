@@ -206,6 +206,8 @@ let g:deoplete#complete_method = 'complete'
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' 
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
+let g:deoplete#auto_complete_start_length = 3
+
 """""""""""""""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""""""""""""
