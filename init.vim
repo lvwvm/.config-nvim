@@ -159,27 +159,27 @@ let g:ale_lint_on_enter = 1
 
 " Linters to use when running ale.
 let g:ale_linters = {
-    'c': [ 'clang-tidy' ],
-    'cpp': [ 'clang-tidy' ],
-    'sh': [ 'shellcheck' ],
-    'go': [ 'megacheck' ],
-    'javascript': [ 'standard' ],
-    'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
-    'rust' : [ 'clippy' ],
-    'solidity': [ 'solium' ]
-}
+  \ 'c': [ 'clang-tidy' ],
+  \ 'cpp': [ 'clang-tidy' ],
+  \ 'sh': [ 'shellcheck' ],
+  \ 'go': [ 'megacheck' ],
+  \ 'javascript': [ 'standard' ],
+  \ 'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
+  \ 'rust' : [ 'clippy' ],
+  \ 'solidity': [ 'solium' ],
+  \ }
 
 " Fixers correct linter errors automagically!
 let g:ale_fixers = {
-    'c': [ 'clangformat' ],
-    'cpp': [ 'clangformat' ],
-    'sh' : [ 'shfmt' ],
-    'go' : [ 'gofmt' ],
-    'javascript': [ 'prettier-standard' ],
-    'python': [ 'yapf' ],
-    'rust': [ 'rustfmt' ],
-    'vim': ['generic']
-}
+  \ 'c': [ 'clangformat' ],
+  \ 'cpp': [ 'clangformat' ],
+  \ 'sh' : [ 'shfmt' ],
+  \ 'go' : [ 'gofmt' ],
+  \ 'javascript': [ 'prettier-standard' ],
+  \ 'python': [ 'yapf' ],
+  \ 'rust': [ 'rustfmt' ],
+  \ 'vim': ['generic'],
+  \ }
 
 " Run ale upon saving a file.
 let g:ale_lint_on_save = 1
