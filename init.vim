@@ -24,7 +24,7 @@ set hlsearch
 set incsearch
 set noswapfile
 set nobackup
-set nowb
+set nowritebackup
 set autoread
 
 """"""""""""""""""""""""""""""""""""""""
@@ -49,7 +49,7 @@ set tags+=~/.config/nvim/systags
 """"""""""""""""""""""""""""""""""""""""
 " UI
 """"""""""""""""""""""""""""""""""""""""
-let g:airline_theme="wombat"
+let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 try
@@ -60,7 +60,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
 """""""""""""""""""""""""""""""""""""""
-call plug#begin("~/.local/share/nvim/plugged")
+call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-obsession'
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
@@ -93,8 +93,7 @@ call plug#end()
 " Mappings
 """""""""""""""""""""""""""""""""""""""
 
-let mapleader = ","
-let g:mapleader = ","
+let g:mapleader = ','
 
 " Simple Window Movement
 nmap <c-j> <c-w>j
@@ -159,13 +158,14 @@ let g:ale_lint_on_enter = 1
 
 " Linters to use when running ale.
 let g:ale_linters = {
-  \ 'c': [ 'clang-tidy' ],
-  \ 'cpp': [ 'clang-tidy' ],
+  \ 'c': [ 'clangtidy' ],
+  \ 'cpp': [ 'clangtidy' ],
   \ 'sh': [ 'shellcheck' ],
   \ 'go': [ 'megacheck' ],
   \ 'javascript': [ 'standard' ],
   \ 'python': [ $WORKON_HOME . '/neovim/bin/flake8' ],
   \ 'rust' : [ 'clippy' ],
+  \ 'vim' : [ 'vint' ],
   \ 'solidity': [ 'solium' ],
   \ }
 
@@ -175,7 +175,7 @@ let g:ale_fixers = {
   \ 'cpp': [ 'clangformat' ],
   \ 'sh' : [ 'shfmt' ],
   \ 'go' : [ 'gofmt' ],
-  \ 'javascript': [ 'prettier-standard' ],
+  \ 'javascript': [ 'prettier_standard' ],
   \ 'python': [ 'yapf' ],
   \ 'rust': [ 'rustfmt' ],
   \ 'vim': ['generic'],
