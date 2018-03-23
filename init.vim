@@ -52,10 +52,6 @@ set tags+=~/.config/nvim/systags
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-try
-    colorscheme pablo
-catch
-endtry
 
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
@@ -73,6 +69,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
     Plug 'Shougo/neco-syntax'
+    Plug 'nightsense/vimspectr'
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -127,6 +124,12 @@ nnoremap <Left> <NOP>
 
 "Leader-q to Escape from insert mode.
 inoremap <leader>q <ESC>
+
+"""""""""""""""""""""""""""""""""""""""
+" Colorscheme 
+"""""""""""""""""""""""""""""""""""""""
+
+colorscheme vimspectr210-dark
 
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
