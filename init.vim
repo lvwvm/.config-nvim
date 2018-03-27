@@ -84,6 +84,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'Shougo/neosnippet'
     Plug 'airblade/vim-gitgutter'
     Plug 'Shougo/neosnippet-snippets'
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""
