@@ -106,7 +106,12 @@ nmap <c-l> <c-w>l
 nmap <leader>gr :Gread<cr> 
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
+
 nmap <leader>w :w!<cr>
+nmap <leader>ws :split<cr>
+nmap <leader>wv :vsplit<cr>
+
 nmap <leader>tn :tabnext<cr>
 nmap <leader>tp :tabprevious<cr>
 nmap <leader>b :Denite buffer<cr>
@@ -130,7 +135,7 @@ inoremap <leader>q <ESC>
 " Colorscheme 
 """""""""""""""""""""""""""""""""""""""
 
-colorscheme vimspectr210-dark
+colorscheme elflord
 
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
