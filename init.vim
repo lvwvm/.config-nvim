@@ -46,13 +46,6 @@ set foldcolumn=1
 " 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include /usr/local/include
 set tags+=~/.config/nvim/systags
 
-""""""""""""""""""""""""""""""""""""""""
-" UI
-""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='wombat'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
 """""""""""""""""""""""""""""""""""""""
@@ -60,11 +53,10 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-obsession'
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
-    Plug 'bling/vim-airline'
+    Plug 'itchyny/lightline.vim'
     Plug 'w0rp/ale'
     Plug 'edkolev/tmuxline.vim'
     Plug 'scrooloose/nerdtree'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
@@ -85,7 +77,28 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'sheerun/vim-polyglot'
+    Plug 'chriskempson/base16-vim'
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""
+" UI
+""""""""""""""""""""""""""""""""""""""""
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'vimspectr240-dark',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch' ],
+      \             [ 'filename', 'modified', 'readonly' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ }
+      \ }
 
 """""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -135,7 +148,7 @@ inoremap <leader>q <ESC>
 " Colorscheme 
 """""""""""""""""""""""""""""""""""""""
 
-colorscheme elflord
+colorscheme vimspectr240-dark
 
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
