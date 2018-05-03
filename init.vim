@@ -89,7 +89,7 @@ set noshowmode
 colorscheme vimspectr240-dark
 
 let g:lightline = {
-      \ 'colorscheme': 'base-16',
+      \ 'colorscheme': 'base16-vimspectr240-dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch' ],
@@ -146,12 +146,6 @@ nnoremap <Left> <NOP>
 
 "Leader-q to Escape from insert mode.
 inoremap <leader>q <ESC>
-
-"""""""""""""""""""""""""""""""""""""""
-" Colorscheme 
-"""""""""""""""""""""""""""""""""""""""
-
-colorscheme vimspectr240-dark
 
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
