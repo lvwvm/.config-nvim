@@ -56,7 +56,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'itchyny/lightline.vim'
     Plug 'w0rp/ale'
     Plug 'daviesjamie/vim-base16-lightline'
-    Plug 'edkolev/tmuxline.vim'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
@@ -85,12 +84,11 @@ call plug#end()
 " UI
 """"""""""""""""""""""""""""""""""""""""
 set noshowmode
-set termguicolors
 
 colorscheme vimspectr240-dark
 
 let g:lightline = {
-      \ 'colorscheme': 'base16-vimspectr240-dark',
+      \ 'colorscheme': 'base16',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch' ],
