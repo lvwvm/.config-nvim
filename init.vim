@@ -85,6 +85,7 @@ call plug#end()
 " UI
 """"""""""""""""""""""""""""""""""""""""
 set noshowmode
+set termguicolors
 
 colorscheme vimspectr240-dark
 
