@@ -85,7 +85,10 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 set noshowmode
 
-colorscheme vimspectr240-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let g:lightline = {
       \ 'colorscheme': 'base16',
