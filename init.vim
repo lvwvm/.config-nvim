@@ -75,6 +75,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'wokalski/autocomplete-flow'
     Plug 'Shougo/neosnippet'
     Plug 'airblade/vim-gitgutter'
+    Plug 'sebastianmarkow/deoplete-rust'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'sheerun/vim-polyglot'
     Plug 'chriskempson/base16-vim'
@@ -227,6 +228,13 @@ let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 let g:deoplete#auto_complete_start_length = 3
+
+"""""""""""""""""""""""""""""""""""""""""
+" Rust
+"""""""""""""""""""""""""""""""""""""""""
+let g:deoplete#sources#rust#racer_binary='/home/luwum/.local/share/cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/home/luwum/.config/zsh/plugins/asdf-vm/asdf/installs/rust/stable/bin/rust'
+let g:deoplete#sources#rust#show_duplicates=0
 
 """""""""""""""""""""""""""""""""""""""
 " Python
