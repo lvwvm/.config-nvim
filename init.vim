@@ -54,6 +54,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
     Plug 'itchyny/lightline.vim'
+    Plug 'tpope/vim-vinegar'
     Plug 'w0rp/ale'
     Plug 'daviesjamie/vim-base16-lightline'
     Plug 'scrooloose/nerdtree'
