@@ -268,3 +268,8 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 let g:SuperTabLongestEnhanced = "1"
 
+""""""""""""""""""""""""""""""""""""""""
+" neosnippet
+""""""""""""""""""""""""""""""""""""""""
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = $XDG_DATA_HOME . '/nvim/plugged/neosnippet-snippets/neosnippets'
