@@ -1,8 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""
-"
-"  Maintainer: Idigo Luwum
-"  Version: 0.1.5
-"
+" Maintainer: Idigo Luwum
+" Version: #ver
+" License: This file is placed under the terms of Gnu Public License Version 2
 """""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""
@@ -72,6 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
+    Plug 'honza/vim-snippet'
     Plug 'Shougo/neco-syntax'
     Plug 'wokalski/autocomplete-flow'
     Plug 'Shougo/neosnippet'
