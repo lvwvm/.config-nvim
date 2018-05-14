@@ -47,7 +47,7 @@ set tags+=~/.config/nvim/systags
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
 """""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'tpope/vim-obsession'
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
@@ -59,7 +59,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
-    Plug 'Shougo/neco-syntax'
     Plug 'nightsense/vimspectr'
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
