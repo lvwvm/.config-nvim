@@ -257,8 +257,8 @@ let g:deoplete#sources#rust#show_duplicates = 0
 """""""""""""""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""""""""""""
-let g:python_host_prog = '/home/luwum/.local/share/virtualenvs/neovim2/bin/python'
-let g:python3_host_prog = '/home/luwum/.local/share/virtualenvs/neovim/bin/python'
+let g:python_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim2/bin/python'
+let g:python3_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim/bin/python'
 
 """""""""""""""""""""""""""""""""""""""
 " SuperTab
