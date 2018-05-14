@@ -259,3 +259,12 @@ let g:deoplete#sources#rust#show_duplicates = 0
 """""""""""""""""""""""""""""""""""""""
 let g:python_host_prog = '/home/luwum/.local/share/virtualenvs/neovim2/bin/python'
 let g:python3_host_prog = '/home/luwum/.local/share/virtualenvs/neovim/bin/python'
+
+"""""""""""""""""""""""""""""""""""""""
+" SuperTab
+"""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+let g:SuperTabLongestEnhanced = "1"
+
