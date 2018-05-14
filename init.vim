@@ -224,7 +224,7 @@ let g:ale_lint_on_insert_leave = 1
 " longest - only insert the longest common text of the matches.
 " noinsert - do not insert any text for a match until the user selects a match
 " noselect - do not select a match in the menu, force the user to select one. 
-set &completeopt="menu,menuone,longest,preview"
+set completeopt="menu,menuone,longest,preview"
 
 let g:deoplete#enable_at_startup = 1
 
