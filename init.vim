@@ -70,6 +70,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
+    Plug 'rust-lang/rust.vim'
     Plug 'honza/vim-snippet'
     Plug 'Shougo/neco-syntax'
     Plug 'wokalski/autocomplete-flow'
