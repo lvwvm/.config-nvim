@@ -66,6 +66,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'tweekmonster/deoplete-clang2'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
+    Plug 'nixprime/cpsm'
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
@@ -214,13 +215,31 @@ let g:ale_lint_on_insert_leave = 1
 """""""""""""""""""""""""""""""""""""""
 " Deoplete
 """""""""""""""""""""""""""""""""""""""
+
+" These are general completion options for vim.
+" menu - use a popup menu to show the possible completions
+" menuone - use the pop menu when there is only one match
+" preview - show extra information about the currently selected completion.
+" longest - only insert the longest common text of the matches.
+" noinsert - do not insert any text for a match until the user selects a match
+" noselect - do not select a match in the menu, force the user to select one. 
+set &completeopt="menu,menuone,longest,preview"
+
 let g:deoplete#enable_at_startup = 1
 
 " There are 3 different completion types in vim.
 " 1. complete - uses the builtin complete() function.
 " 2. completefunc - uses a user defined function for completion.
 " 3. omnicomplete - uses a filetype-specific function for completion.
-let g:deoplete#complete_method = 'complete'
+call deoplete#custom#option('complete_method', 'completefunc')
+
+" Set specific source file options
+call deoplete#custom#source('_', 'matchers', ['matcher_cpsm']) 
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Commnent', 'String']) 
+call deoplete#custom#source('_', 'sorters', [] )
+call deoplete#custom#source('_', 'converters', ['converter_remove_overlap',
+            \ 'converter_auto_delimiter', 'converter_auto_paren', 
+            \ 'converter_truncate_menu', 'converter_truncate_abbr'])
 
 " Clang source locations
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' 
@@ -231,9 +250,9 @@ let g:deoplete#auto_complete_start_length = 3
 """""""""""""""""""""""""""""""""""""""""
 " Rust
 """""""""""""""""""""""""""""""""""""""""
-let g:deoplete#sources#rust#racer_binary='/home/luwum/.local/share/cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/luwum/.config/zsh/plugins/asdf-vm/asdf/installs/rust/stable/bin/rust'
-let g:deoplete#sources#rust#show_duplicates=0
+let g:deoplete#sources#rust#racer_binary = $CARGO_HOME . '/bin/racer'
+let g:deoplete#sources#rust#rust_source_path = $XDG_DATA_HOME . '/zsh/plugins/asdf-vm/asdf/installs/rust/stable/bin/rust'
+let g:deoplete#sources#rust#show_duplicates = 0
 
 """""""""""""""""""""""""""""""""""""""
 " Python
