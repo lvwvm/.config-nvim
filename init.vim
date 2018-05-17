@@ -42,7 +42,7 @@ set foldcolumn=1
 " Don't forget
 " 1. Install univeral ctags at https://github.com/universal-ctags/ctags
 " 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include /usr/local/include
-set tags+=~/.config/nvim/systags
+set tags +=~/.config/nvim/systags
 
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
@@ -123,7 +123,7 @@ nmap <c-l> <c-w>l
 " Normal Mode
 """""""""""""""""""""""""""""""""""""""
 
-nmap <leader>gr :Gread<cr> 
+nmap <leader>gr :Gread<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
@@ -210,7 +210,7 @@ let g:ale_lint_on_save = 1
 " Do not run ale upon changes to the file.
 let g:ale_lint_on_text_changed = 'never'
 
-" Run ale after leaving insert mode. 
+" Run ale after leaving insert mode.
 let g:ale_lint_on_insert_leave = 1
 
 """""""""""""""""""""""""""""""""""""""
@@ -223,7 +223,7 @@ let g:ale_lint_on_insert_leave = 1
 " preview - show extra information about the currently selected completion.
 " longest - only insert the longest common text of the matches.
 " noinsert - do not insert any text for a match until the user selects a match
-" noselect - do not select a match in the menu, force the user to select one. 
+" noselect - do not select a match in the menu, force the user to select one.
 set completeopt="menu,menuone,longest,preview"
 
 let g:deoplete#enable_at_startup = 1
@@ -235,15 +235,15 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('complete_method', 'completefunc')
 
 " Set specific source file options
-call deoplete#custom#source('_', 'matchers', ['matcher_cpsm']) 
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Commnent', 'String']) 
+call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Commnent', 'String'])
 call deoplete#custom#source('_', 'sorters', [] )
 call deoplete#custom#source('_', 'converters', ['converter_remove_overlap',
-            \ 'converter_auto_delimiter', 'converter_auto_paren', 
+            \ 'converter_auto_delimiter', 'converter_auto_paren',
             \ 'converter_truncate_menu', 'converter_truncate_abbr'])
 
 " Clang source locations
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so' 
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 let g:deoplete#auto_complete_start_length = 3
@@ -266,8 +266,7 @@ let g:python3_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim/bin/python'
 """""""""""""""""""""""""""""""""""""""
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
-
-let g:SuperTabLongestEnhanced = "1"
+let g:SuperTabLongestEnhanced = 1
 
 """"""""""""""""""""""""""""""""""""""""
 " neosnippet
