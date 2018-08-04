@@ -64,6 +64,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tweekmonster/deoplete-clang2'
+    Plug 'zchee/deoplete-jedi'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
     Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
@@ -266,9 +267,9 @@ let g:deoplete#sources#rust#show_duplicates = 0
 
 """""""""""""""""""""""""""""""""""""""
 " Python
-"""""""""""""""""""""""""""""""""""""""
-let g:python_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim2/bin/python'
-let g:python3_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim/bin/python'
+""""""""""""""""""""""""""""""""""""""" 
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog =  '/usr/bin/python3'
 
 """""""""""""""""""""""""""""""""""""""
 " SuperTab
