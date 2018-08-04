@@ -66,7 +66,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'tweekmonster/deoplete-clang2'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
-    Plug 'nixprime/cpsm'
+    Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
