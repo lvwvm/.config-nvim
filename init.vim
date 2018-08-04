@@ -151,6 +151,15 @@ nnoremap <Left> <NOP>
 "Leader-q to Escape from insert mode.
 inoremap <leader>q <ESC>
 
+"SuperTab neosnippet behavior
+inoremap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+snoremap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
 """""""""""""""""""""""""""""""""""""""
@@ -264,6 +273,14 @@ let g:python3_host_prog = $XDG_DATA_HOME . '/virtualenvs/neovim/bin/python'
 """""""""""""""""""""""""""""""""""""""
 " SuperTab
 """""""""""""""""""""""""""""""""""""""
+
+let g:SuperTabMappingForward = "<c-space>"
+let g:SuperTabMappingBackward = "<c-alt-space>"
+let g:SuperMappingTabLiteral = "<tab>"
+let g:SuperTabCompletionContexts = [ 's:ContextText', 's:ContextDiscover' ]
+let g:SuperTabContextDiscoverDiscovery =
+  \  [ "&completefunc: <c-x><c-u>", "&omnifunc:<c-x><c-o>" ]
+
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestEnhanced = 1
