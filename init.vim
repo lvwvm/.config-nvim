@@ -240,13 +240,13 @@ let g:deoplete#enable_at_startup = 1
 " There are 3 different completion types in vim.
 " 1. complete - uses the builtin complete() function.
 " 2. completefunc - uses a user defined function for completion.
-" 3. omnicomplete - uses a filetype-specific function for completion.
-call deoplete#custom#option('complete_method', 'completefunc')
+" 3. omnifunc - uses a filetype-specific function for completion.
+call deoplete#custom#option('complete_method', 'omnifunc')
 
 " Set specific source file options
 call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Commnent', 'String'])
-call deoplete#custom#source('_', 'sorters', [] )
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+call deoplete#custom#source('_', 'sorters', ['sorter_rank'] )
 call deoplete#custom#source('_', 'converters', ['converter_remove_overlap',
             \ 'converter_auto_delimiter', 'converter_auto_paren',
             \ 'converter_truncate_menu', 'converter_truncate_abbr'])
