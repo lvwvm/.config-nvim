@@ -1,6 +1,6 @@
 " Maintainer: Idigo Luwum
 " Version: #ver
-" License: This file is placed under the terms of Gnu Public License Version 2
+" License: This file is distributed under the terms of Gnu Public License Version 2
 """""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""
@@ -34,7 +34,6 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set foldcolumn=1
-
 
 """"""""""""""""""""""""""""""""""""""""
 " Ctags
