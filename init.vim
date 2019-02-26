@@ -67,11 +67,9 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
     Plug 'nightsense/vimspectr'
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
-    Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
     Plug 'hashivim/vim-vagrant'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
