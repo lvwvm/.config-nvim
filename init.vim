@@ -69,9 +69,6 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'nightsense/vimspectr'
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     Plug 'Shougo/denite.nvim'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'tweekmonster/deoplete-clang2'
-    Plug 'zchee/deoplete-jedi'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
     Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
@@ -79,10 +76,8 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'rust-lang/rust.vim'
-    Plug 'honza/vim-snippet'
-    Plug 'Shougo/neco-syntax'
+    Plug 'honza/vim-snippets'
     Plug 'wokalski/autocomplete-flow'
-    Plug 'Shougo/neosnippet'
     Plug 'airblade/vim-gitgutter'
     Plug 'sebastianmarkow/deoplete-rust'
     Plug 'Shougo/neosnippet-snippets'
@@ -159,15 +154,6 @@ nnoremap <Left> <NOP>
 "Leader-q to Escape from insert mode.
 inoremap <leader>q <ESC>
 
-"SuperTab neosnippet behavior
-inoremap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-snoremap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 """""""""""""""""""""""""""""""""""""""
 " Prosession / Obsession
 """""""""""""""""""""""""""""""""""""""
@@ -230,41 +216,6 @@ let g:ale_lint_on_text_changed = 'never'
 " Run ale after leaving insert mode.
 let g:ale_lint_on_insert_leave = 1
 
-"""""""""""""""""""""""""""""""""""""""
-" Deoplete
-"""""""""""""""""""""""""""""""""""""""
-
-" These are general completion options for vim.
-" menu - use a popup menu to show the possible completions
-" menuone - use the pop menu when there is only one match
-" preview - show extra information about the currently selected completion.
-" longest - only insert the longest common text of the matches.
-" noinsert - do not insert any text for a match until the user selects a match
-" noselect - do not select a match in the menu, force the user to select one.
-set completeopt="menu,menuone,longest,preview"
-
-let g:deoplete#enable_at_startup = 1
-
-" There are 3 different completion types in vim.
-" 1. complete - uses the builtin complete() function.
-" 2. completefunc - uses a user defined function for completion.
-" 3. omnifunc - uses a filetype-specific function for completion.
-call deoplete#custom#option('complete_method', 'omnifunc')
-
-" Set specific source file options
-call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
-call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
-call deoplete#custom#source('_', 'sorters', ['sorter_rank'] )
-call deoplete#custom#source('_', 'converters', ['converter_remove_overlap',
-            \ 'converter_auto_delimiter', 'converter_auto_paren',
-            \ 'converter_truncate_menu', 'converter_truncate_abbr'])
-
-" Clang source locations
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-
-let g:deoplete#auto_complete_start_length = 3
-
 """""""""""""""""""""""""""""""""""""""""
 " Rust
 """""""""""""""""""""""""""""""""""""""""
@@ -292,9 +243,3 @@ let g:SuperTabContextDiscoverDiscovery =
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabLongestEnhanced = 1
-
-""""""""""""""""""""""""""""""""""""""""
-" neosnippet
-""""""""""""""""""""""""""""""""""""""""
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory = $XDG_DATA_HOME . '/nvim/plugged/neosnippet-snippets/neosnippets'
