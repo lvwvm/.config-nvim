@@ -87,7 +87,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 set noshowmode
 
-if filereadable(expand("~/.vimrc_background"))
+if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
@@ -198,15 +198,14 @@ let g:ale_linters = {
 
 " Fixers correct linter errors automagically!
 let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'], 
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'c': [ 'clangformat' ],
   \ 'cpp': [ 'clangformat' ],
   \ 'sh' : [ 'shfmt' ],
   \ 'go' : [ 'gofmt' ],
   \ 'javascript': [ 'prettier_standard' ],
   \ 'python': [ 'yapf' ],
-  \ 'rust': [ 'rustfmt' ],
-  \ 'vim': ['generic'],
+  \ 'rust': [ 'rustfmt']
   \ }
 
 " Run ale upon saving a file.
@@ -227,7 +226,7 @@ let g:deoplete#sources#rust#show_duplicates = 0
 
 """""""""""""""""""""""""""""""""""""""
 " Python
-""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog =  '/usr/bin/python3'
 
