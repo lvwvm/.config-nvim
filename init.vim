@@ -58,6 +58,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
     Plug 'itchyny/lightline.vim'
+    Plug 'maximbaz/lightline-ale'
     Plug 'tpope/vim-vinegar'
     Plug 'w0rp/ale'
     Plug 'daviesjamie/vim-base16-lightline'
@@ -104,6 +105,12 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
+      \ },
+      \ 'component_type' : {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok' 
       \ }
       \ }
 
