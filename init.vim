@@ -217,30 +217,8 @@ let g:ale_lint_on_text_changed = 'never'
 " Run ale after leaving insert mode.
 let g:ale_lint_on_insert_leave = 1
 
-"""""""""""""""""""""""""""""""""""""""""
-" Rust
-"""""""""""""""""""""""""""""""""""""""""
-let g:deoplete#sources#rust#racer_binary = $CARGO_HOME . '/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = $XDG_DATA_HOME . '/zsh/plugins/asdf-vm/asdf/installs/rust/stable/bin/rust'
-let g:deoplete#sources#rust#show_duplicates = 0
-
 """""""""""""""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""""""""""""
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog =  '/usr/bin/python3'
-
-"""""""""""""""""""""""""""""""""""""""
-" SuperTab
-"""""""""""""""""""""""""""""""""""""""
-
-let g:SuperTabMappingForward = "<c-space>"
-let g:SuperTabMappingBackward = "<c-alt-space>"
-let g:SuperMappingTabLiteral = "<tab>"
-let g:SuperTabCompletionContexts = [ 's:ContextText', 's:ContextDiscover' ]
-let g:SuperTabContextDiscoverDiscovery =
-  \  [ "&completefunc: <c-x><c-u>", "&omnifunc:<c-x><c-o>" ]
-
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabLongestEnhanced = 1
