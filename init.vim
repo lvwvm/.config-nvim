@@ -194,6 +194,7 @@ let g:ale_linters = {
 
 " Fixers correct linter errors automagically!
 let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'], 
   \ 'c': [ 'clangformat' ],
   \ 'cpp': [ 'clangformat' ],
   \ 'sh' : [ 'shfmt' ],
