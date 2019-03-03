@@ -159,13 +159,17 @@ inoremap <leader>q <ESC>
 " autocommands. Prosession stores and manages the created sessions.
 
 " Store all session files in XDG_DATA_HOME
-let g:procession_dir = $XDG_DATA_HOME . '/nvim/session/'
+let g:prosession_dir = $XDG_DATA_HOME . '/nvim/session/'
+
+if !filewritable(g:prosession_dir)
+   call mkdir(g:prosession_dir)
+endif
 
 " Create a session for the create vcs branch.
-let g:procession_per_branch = 1
+let g:prosession_per_branch = 1
 
 " Command used to identify the current branch.
-let g:procession_branch_cmd = 'git rev-parse --abbrev-ref HEAD 2>/dev/null'
+let g:prosession_branch_cmd = 'git rev-parse --abbrev-ref HEAD 2>/dev/null'
 
 """""""""""""""""""""""""""""""""""""""
 " Ale
