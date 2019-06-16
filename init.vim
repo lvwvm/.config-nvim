@@ -171,6 +171,7 @@ nmap <leader>w :w!<cr>
 nmap <leader>ws :split<cr>
 nmap <leader>wv :vsplit<cr>
 
+nmap <leader>tt :tabnew<cr>
 nmap <leader>tn :tabnext<cr>
 nmap <leader>tp :tabprevious<cr>
 
