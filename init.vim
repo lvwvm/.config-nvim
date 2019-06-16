@@ -7,10 +7,13 @@
 " General
 """""""""""""""""""""""""""""""""""""""
 " utf8 ftw!
-set encoding=utf8
+set encoding=utf-8
 
 " up to 500 lines of vim command history
 set history=500
+
+" enable mouse for all modes. 
+set mouse=a
 
 " load filetype specific highlighting and indentation
 filetype plugin on
@@ -40,7 +43,19 @@ set foldcolumn=1
 """"""""""""""""""""""""""""""""""""""""
 " Don't forget
 " 1. Install univeral ctags at https://github.com/universal-ctags/ctags
-" 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include /usr/local/include
+" 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include
+" /usr/local/include
+
+echom 'Searching for ctags installation.'
+if empty(exepath('ctags'))
+    echom ' Could not find ctags on the system.\n' 
+    \ ' Install univeral ctags at https://github.com/universal-ctags/ctags\n'
+    \ ' Generate tags file with ctags -R -f <path_to_store_ctags> <include_path>...'
+endif
+if !exists(expand('$XDG_DATA_HOME/ctags/'))
+    echom 'Creating systags'
+    
+endif
 set tags +=~/.config/nvim/systags
 
 """""""""""""""""""""""""""""""""""""""
@@ -58,23 +73,28 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
     Plug 'itchyny/lightline.vim'
+    Plug 'SirVer/ultisnips'
     Plug 'maximbaz/lightline-ale'
     Plug 'tpope/vim-vinegar'
     Plug 'w0rp/ale'
+    Plug 'supercollider/scvim'
     Plug 'daviesjamie/vim-base16-lightline'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
     Plug 'nightsense/vimspectr'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'Shougo/denite.nvim'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
     Plug 'hashivim/vim-vagrant'
+    Plug 'lambdalisue/suda.vim'
     Plug 'mattn/emmet-vim'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'rust-lang/rust.vim'
     Plug 'honza/vim-snippets'
+    Plug 'Valloric/YouCompleteMe'
     Plug 'wokalski/autocomplete-flow'
     Plug 'airblade/vim-gitgutter'
     Plug 'sebastianmarkow/deoplete-rust'
@@ -135,15 +155,44 @@ nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 
+nnoremap <leader>gg :GitGutterToggle<cr>
+nnoremap <leader>gh :GitGutterLineHighlightsToggle<cr>
+nnoremap <leader>ga :GitGutterStageHunk<cr>
+nnoremap <leader>gu :GitGutterUndoHunk<cr>
+
+nnoremap <leader>af :ALEFix<cr>
+nnoremap <leader>ad :ALEDetail<cr>
+nnoremap <leader>al :ALEDetail<cr>
+
 nmap <leader>w :w!<cr>
 nmap <leader>ws :split<cr>
 nmap <leader>wv :vsplit<cr>
 
 nmap <leader>tn :tabnext<cr>
 nmap <leader>tp :tabprevious<cr>
+
 nmap <leader>b :Denite buffer<cr>
 nmap <leader>f :Denite file<cr>
 nmap <leader>h :Denite command_history<cr>
+nmap <leader>j :YcmCompleter GoTo<cr>
+nmap <leader>  :YcmCompleter
+
+nnoremap <F1> <silent>
+nnoremap <F2> <silent>
+nnoremap <F3> <silent>
+nnoremap <F4> <silent>
+nnoremap <F5> <silent>
+nnoremap <F6> <silent>
+nnoremap <F7> :YcmCompleter 
+nnoremap <F8> :YcmCompleter 
+nnoremap <F9> :YcmCompleter GoTo
+nnoremap <F10> :YcmCompleter 
+nnoremap <F11> :YcmCompleter GoTo
+nnoremap <F12> :YcmCompleter 
+
+" Quickly move between ALE errors.
+nnoremap <silent><C-S-k> <Plug>(ale_previous_wrap)
+nnoremap <silent><C-S-j> <Plug>(ale_next_wrap)
 
 " Disable the arrow keys
 nnoremap <Down> <NOP>
@@ -172,8 +221,8 @@ if !filewritable(g:prosession_dir)
    call mkdir(g:prosession_dir)
 endif
 
-" Create a session for the create vcs branch.
-let g:prosession_per_branch = 1
+" Do not create session for a vcs branch.
+let g:prosession_per_branch = 0
 
 " Command used to identify the current branch.
 let g:prosession_branch_cmd = 'git rev-parse --abbrev-ref HEAD 2>/dev/null'
@@ -192,7 +241,7 @@ let g:ale_lint_on_enter = 1
 
 " Linters to use when running ale.
 let g:ale_linters = {
-  \ 'c': [ 'clangtidy' ],
+  \ 'c': [ 'clangd' ],
   \ 'cpp': [ 'clangtidy' ],
   \ 'sh': [ 'shellcheck' ],
   \ 'go': [ 'megacheck' ],
@@ -206,8 +255,8 @@ let g:ale_linters = {
 " Fixers correct linter errors automagically!
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'c': [ 'clangformat' ],
-  \ 'cpp': [ 'clangformat' ],
+  \ 'c': [ 'clang-format' ],
+  \ 'cpp': [ 'clang-format' ],
   \ 'sh' : [ 'shfmt' ],
   \ 'go' : [ 'gofmt' ],
   \ 'javascript': [ 'prettier_standard' ],
