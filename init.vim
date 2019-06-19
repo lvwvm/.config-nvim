@@ -43,20 +43,15 @@ set foldcolumn=1
 """"""""""""""""""""""""""""""""""""""""
 " Don't forget
 " 1. Install univeral ctags at https://github.com/universal-ctags/ctags
-" 2. Generate tags file with ctags -R -f ~/.config/nvim/systags /usr/include
+" 2. Generate tags file with ctags -R -f ~/.local/share/ctags/systags /usr/include
 " /usr/local/include
-
-echom 'Searching for ctags installation.'
 if empty(exepath('ctags'))
-    echom ' Could not find ctags on the system.\n' 
+    echom ' Could not find ctags on the system.\n'
     \ ' Install univeral ctags at https://github.com/universal-ctags/ctags\n'
     \ ' Generate tags file with ctags -R -f <path_to_store_ctags> <include_path>...'
 endif
-if !exists(expand('$XDG_DATA_HOME/ctags/'))
-    echom 'Creating systags'
-    
-endif
-set tags +=~/.config/nvim/systags
+
+set tags+=expand('~/.local/share/ctags/systags')
 
 """""""""""""""""""""""""""""""""""""""
 " Plugins (via vim-plug)
