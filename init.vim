@@ -185,8 +185,11 @@ nmap <leader>m :YcmCompleter GetDoc<cr>
 
 nnoremap <F1> <silent>
 nnoremap <F2> <silent>
-nnoremap <F3> <silent>
-nnoremap <F4> <silent>
+
+" Quickly move between ALE errors.
+nnoremap <F3> <Plug>(ale_previous_wrap)
+nnoremap <F4> <Plug>(ale_next_wrap)
+
 nnoremap <F5> <silent>
 nnoremap <F6> <silent>
 nnoremap <F7> :YcmCompleter 
