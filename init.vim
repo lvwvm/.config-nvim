@@ -282,3 +282,12 @@ let g:ale_lint_on_insert_leave = 1
 """""""""""""""""""""""""""""""""""""""
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog =  '/usr/bin/python3'
+
+
+"""""""""""""""""""""""""""""""""""""""
+" Suda
+"""""""""""""""""""""""""""""""""""""""
+" Automagically switch a buffer name when the target file is not readable or writable.
+let g:suda_smart_edit = 1
+let g:suda#prefix = ['suda://', 'sudo://']
+
