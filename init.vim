@@ -70,6 +70,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'tpope/vim-obsession'
     Plug 'dhruvasagar/vim-prosession'
     Plug 'tpope/vim-sensible'
+    Plug 'w0rp/ale'
     Plug 'itchyny/lightline.vim'
     Plug 'SirVer/ultisnips'
     Plug 'maximbaz/lightline-ale'
