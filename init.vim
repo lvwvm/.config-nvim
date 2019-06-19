@@ -179,7 +179,9 @@ nmap <leader>b :Denite buffer<cr>
 nmap <leader>f :Denite file<cr>
 nmap <leader>h :Denite command_history<cr>
 nmap <leader>j :YcmCompleter GoTo<cr>
-nmap <leader>  :YcmCompleter
+nmap <leader>d :YcmCompleter GoToDefinition<cr>
+nmap <leader>k :YcmCompleter GetType<cr>
+nmap <leader>m :YcmCompleter GetDoc<cr>
 
 nnoremap <F1> <silent>
 nnoremap <F2> <silent>
