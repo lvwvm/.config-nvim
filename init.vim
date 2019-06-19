@@ -82,7 +82,6 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'majutsushi/tagbar'
     Plug 'benmills/vimux'
     Plug 'nightsense/vimspectr'
-    Plug 'ryanoasis/vim-devicons'
     Plug 'Shougo/denite.nvim'
     Plug 'ervandew/supertab'
     Plug 'tpope/vim-surround'
@@ -99,6 +98,7 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
     Plug 'Shougo/neosnippet-snippets'
     Plug 'sheerun/vim-polyglot'
     Plug 'chriskempson/base16-vim'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""
