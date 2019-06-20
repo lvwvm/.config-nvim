@@ -118,20 +118,31 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch' ],
       \             [ 'filename', 'modified', 'readonly' ] ],
-      \   'right': [ [ 'lineinfo' ],
+      \   'right': [ [ 'lineinfo', 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
       \              [ 'percent' ],
       \              [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
       \ },
-      \ 'component_type' : {
+      \ 'component_expand' : {
       \  'linter_checking': 'lightline#ale#checking',
       \  'linter_warnings': 'lightline#ale#warnings',
       \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok' 
+      \  'linter_ok': 'lightline#ale#ok'
+      \ },
+      \ 'component_type' : {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
       \ }
       \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 """""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -161,7 +172,7 @@ nnoremap <leader>gu :GitGutterUndoHunk<cr>
 
 nnoremap <leader>af :ALEFix<cr>
 nnoremap <leader>ad :ALEDetail<cr>
-nnoremap <leader>al :ALEDetail<cr>
+nnoremap <leader>al :ALELint<cr>
 
 nmap <leader>w :w!<cr>
 nmap <leader>ws :split<cr>
