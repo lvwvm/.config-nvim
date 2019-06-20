@@ -12,7 +12,7 @@ set encoding=utf-8
 " up to 500 lines of vim command history
 set history=500
 
-" enable mouse for all modes. 
+" enable mouse for all modes.
 set mouse=a
 
 " load filetype specific highlighting and indentation
@@ -197,19 +197,6 @@ nnoremap <F2> <silent>
 nnoremap <F3> <Plug>(ale_previous_wrap)
 nnoremap <F4> <Plug>(ale_next_wrap)
 
-nnoremap <F5> <silent>
-nnoremap <F6> <silent>
-nnoremap <F7> :YcmCompleter 
-nnoremap <F8> :YcmCompleter 
-nnoremap <F9> :YcmCompleter GoTo
-nnoremap <F10> :YcmCompleter 
-nnoremap <F11> :YcmCompleter GoTo
-nnoremap <F12> :YcmCompleter 
-
-" Quickly move between ALE errors.
-nnoremap <silent><C-S-k> <Plug>(ale_previous_wrap)
-nnoremap <silent><C-S-j> <Plug>(ale_next_wrap)
-
 " Disable the arrow keys
 nnoremap <Down> <NOP>
 nnoremap <Up> <NOP>
@@ -294,7 +281,6 @@ let g:ale_lint_on_insert_leave = 1
 """""""""""""""""""""""""""""""""""""""
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog =  '/usr/bin/python3'
-
 
 """""""""""""""""""""""""""""""""""""""
 " Suda
